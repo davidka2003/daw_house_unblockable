@@ -1,7 +1,9 @@
 $primary-color: #ffff;
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400&display=swap');
 body{
     background-color: black;
     margin: 0;
+    font-family: 'Oswald', sans-serif;
 }
 .body{
     // background-image: url(/src/assets/background.jpg);
@@ -11,27 +13,66 @@ body{
     background-repeat: no-repeat;
     background-color: white;
     background-position: bottom ;
+    font-family: 'Oswald', sans-serif;
 }
 .header{
     background-color: black;
     // border-bottom: solid 1.5px rgb(198, 198, 198);
-    height: 70px;
-    justify-content: space-between;
+    height: 200px;
     display: flex;
-    padding-left: 15px;
-    padding-right: 15px;
+    padding: 0px 30px;
     
     &__logoContainer{
         display: flex;
-        width: 50px;
+        width: 20%;
         .logo{
+            margin-top: auto;
+            margin-bottom: auto;
             max-height: 80%;
         }
     }
-    &__buttonContainer{
+    &__mobilePanel{
+        display: none;
+    }
+    &__links{
+        width: 55%;
+        display: flex;
+        margin-top: auto;
+        margin-bottom: auto;
+        :nth-child(1){
+            padding-left: 0;
+        }
+        div{
+            padding: 0px 35px;
+            a{
+                font-size: 15pt;
+                letter-spacing: 3px;
+                font-weight: 200;
+                white-space: nowrap;
+                text-decoration: none;
+                color: white;
+                
+            }
+        }
+    }
+    &__socialNetwork{
+        width: 25%;
         display: flex;
         align-items: center;
-        justify-content: center;
+        justify-content: right;
+        &--container{
+
+            display: flex;
+            &--links{
+                padding: 0px 10px;
+                a{
+                    color: white;
+                text-decoration: none;
+                }
+                
+            }
+        }
+        
         
     }
     &__errorContainer{
@@ -43,32 +84,33 @@ body{
     }
     
 }
-
-.buttonPrimary{
-    margin: 0 auto;
-    display: block;
-    padding: 5px 10px; 
-    outline: none;
-    font-weight: bold;
-    border: solid 1px;
-    border-radius: 5px;
-    border: solid 1.5px whitesmoke;
-    color: whitesmoke;
-    background-color: rgb(19,	14,	15	);
-    transition: all 0.3s ease-in-out;
-    &:hover{
-        cursor: pointer;
-        border: solid 1.5px #d8d8d8;
+.mAContainer{
+    height: calc(100vh - 300px);
+    text-align: center;
+    h1{
+        color: white;
+        margin: 10px 0px 60px 0px;
+        font-size: 40pt;
     }
-    &:disabled{
-        border: solid 1.5px #d1d1d1;
-        color: #bfbfbf;
+    button{
+        background-color: #FFA500;
+        font-size: 15pt;
+        color: white;
+        outline: none;
+        border: none;
+        border-radius: 5px;
+        padding: 20px 40px;
+        transition: all 0.3s ease-in-out;
         &:hover{
-            cursor: default;
-            border: solid 1.5px #d1d1d1;
+            color: rgba(255, 255, 255, 0.809);
+            cursor: pointer;
+            transform: translateY(3px);
         }
     }
+    
 }
+
+
 
 .errorContainer{
     position: fixed;
@@ -81,54 +123,221 @@ body{
         margin: 0;
     }
 }
-.link-container{
-    display: flex;  
-    justify-items: center;
-    justify-content: center;
-    height: calc(96vh - 70px);
-    .link-raw{
-        margin-top: auto;
-        margin-bottom: auto;
-        max-width: 50%;
-        .links{
-            filter: blur(3px);
 
-            text-align: center;
-            padding: 10px 90px;
+.bottom{
+    margin: 0px 30px;
+    
+    &__header{
+        text-align: center;
+        height: 100px;
+        p{
+            color: white;
+            letter-spacing: 1.5px;
+            font-weight: 100;
+            font-size: 15pt;
+            a{
+                color: #FFA500;
+                text-decoration: none;
+            }
+        }
+    }
+    &__row{
+        height: 100px;
+        border-top: solid 1.5px white;
+        display: flex;
+        &__conditions{
+            width: 33.3%;
+            color: white;
+            display: flex;
+            p{
+                margin-top: auto;
+                margin-bottom: auto;
+                font-weight: 100;
+                letter-spacing: 1.5px;
+                a{
+                    font-weight: 100;
+                    text-decoration: none;
+                    color: white;
+                }
+            }
             
-            background-color: white;
-            outline: none;
-            font-weight: bold;
-            border: solid 1px;
-            border-radius: 10px;
-            border: solid 1.5px whitesmoke;
-            color: whitesmoke;
-            background-color: rgb(19,	14,	15	);
-            transition: all 0.3s ease-in-out;
-            margin: 10px;
-            &:hover{
-                cursor: pointer;
-                border: solid 1.5px #d8d8d8;
-                filter: blur(0px);
-                transform: translateY(2px);
+        }
+        &__logo{
+            width: 33.3%;
+            text-align: center;
+            img{
+                max-height: 100%;
+            }
+        }
+        &__links{
+            
+            width: 33.3%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin: 16px 0px;
+            &--buttons{
+                margin-top: auto;
+                margin-bottom: auto;
+                a{
+                    color: white;
+                }
+    
             }
         }
     }
     
-    
-    .links{
-        
-    }
 }
 
-@media screen and (max-width: 500px){
-    .link-container{
-       
-        .link-raw{
-            .links{
-                padding: 10px 60px;
+@media screen and (max-width: 1000px){
+    .header{
+        background-color: black;
+        // border-bottom: solid 1.5px rgb(198, 198, 198);
+        height: 300px;
+        padding: 0px 30px;
+        display: block;
+        
+        &__logoContainer{
+            height: 100px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            .logo{
+                margin-top: auto;
+                margin-bottom: auto;
+                max-height: 80%;
             }
         }
+        &__mobilePanel{
+            display: flex;
+            button{
+                margin-top: auto;
+                margin-bottom: auto;
+                padding: 10px;
+                border: none;
+                background-color: black;
+                color: white;
+                &:hover{
+                    cursor: pointer;
+                }
+            }
+
+        }
+        &__links{
+            width: 100%;
+            display: none;
+            div{
+                padding: 0px ;
+                a{
+                    font-size: 15pt;
+                    letter-spacing: 3px;
+                    font-weight: 200;
+                    white-space: nowrap;
+                    text-decoration: none;
+                    color: white;
+                    
+                }
+            }
+        }
+        &__socialNetwork{
+            display: none;
+            &--container{
+                &--links{
+                    
+                }
+            }
+            
+            
+        }
+        
+    }
+
+    .mAContainer{
+        h1{
+            color: white;
+            margin: 10px 0px 60px 0px;
+            font-size: 30pt;
+            font-weight: 300;
+        }
+        button{
+            background-color: #FFA500;
+            font-size: 15pt;
+            color: white;
+            outline: none;
+            border: none;
+            border-radius: 5px;
+            padding: 20px 40px;
+            transition: all 0.3s ease-in-out;
+            &:hover{
+                color: rgba(255, 255, 255, 0.809);
+                cursor: pointer;
+                transform: translateY(3px);
+            }
+        }
+        
+    }
+    
+    .bottom{
+        margin: 0px 30px;
+        
+        &__header{
+            text-align: center;
+            height: 100px;
+            p{
+                color: white;
+                letter-spacing: 1.5px;
+                font-weight: 100;
+                font-size: 15pt;
+                a{
+                    color: #FFA500;
+                    text-decoration: none;
+                }
+            }
+        }
+        &__row{
+            height: 100px;
+            display: block;
+            border-top: solid 1.5px white;
+            &__conditions{
+                width: 100%;
+                color: white;
+                text-align: center;
+                margin-top: 10px;
+                p{
+                    
+                    width: 100%;
+                    font-weight: 100;
+                    letter-spacing: 1.5px;
+                    a{
+                        font-weight: 100;
+                        text-decoration: none;
+                        color: white;
+                    }
+                }
+                
+            }
+            &__logo{
+                width: 100%;
+                text-align: center;
+                img{
+                    max-height: 100%;
+                    max-width: 30%;
+                }
+            }
+            &__links{
+                width: 100%;
+                display: flex;
+                flex-wrap: wrap;
+                &--buttons{
+                    margin-bottom: 30px;
+                    a{
+                        color: white;
+                    }
+        
+                }
+            }
+        }
+        
     }
     
     
