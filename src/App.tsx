@@ -5,7 +5,7 @@ const App = () => {
   return (
     <>
       <Routes>
-        <Route path={"/"} element={<Unlockable />}></Route>
+        <Route path={"*"} element={<Unlockable />}></Route>
         {/* <Route path={"*"} element={<Mint />}></Route> */}
       </Routes>
     </>
