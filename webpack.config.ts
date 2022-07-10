@@ -16,7 +16,7 @@ const config: Configuration = {
     bundle: path.resolve(__dirname, "src/index.tsx"),
   },
   output: {
-    path: path.join(__dirname, "dist"),
+    path: path.join(__dirname, "dist/build"),
     filename: "[name][contenthash].js",
     clean: true,
     assetModuleFilename: "[name][ext]",
