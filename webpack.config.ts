@@ -1,8 +1,5 @@
 import path from "path";
-import {
-  Configuration as WebpackConfiguration,
-  HotModuleReplacementPlugin,
-} from "webpack";
+import { Configuration as WebpackConfiguration, HotModuleReplacementPlugin } from "webpack";
 import NodePolyfillPlugin from "node-polyfill-webpack-plugin";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import HtmlWebpackPlugin from "html-webpack-plugin";
@@ -29,11 +26,7 @@ const config: Configuration = {
         use: {
           loader: "babel-loader",
           options: {
-            presets: [
-              "@babel/preset-env",
-              "@babel/preset-react",
-              "@babel/preset-typescript",
-            ],
+            presets: ["@babel/preset-env", "@babel/preset-react", "@babel/preset-typescript"],
           },
         },
       },
