@@ -136,7 +136,7 @@ const Unlockable = () => {
         <div className="cardContainer">
           {connected && (
             <>
-              {content.filter((c) => c.type == "DAW").length && <ShopifyComponent />}
+              {/* {content.filter((c) => c.type == "DAW").length && <ShopifyComponent />} */}
               {content.length ? (
                 content.map((content) =>
                   content.type === "DAW" ? <Samsara content={content} /> : <SnapChat content={content} />
@@ -186,7 +186,6 @@ const Unlockable = () => {
         <div className="bottom__row">
           <div className="bottom__row__conditions">
             <p>
-              {" "}
               DAW <a href="https://desperateapewives.com/terms-conditions">Terms & Conditions</a> <br /> © 2021
               Desperate ApeWives
             </p>
