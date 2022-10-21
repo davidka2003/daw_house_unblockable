@@ -1,19 +1,13 @@
 {
   "compilerOptions": {
-    // "target": "es2018",
-    // "module": "commonjs",
-    // "strict": true,
-    // "esModuleInterop": true,
-    // "outDir": "dist",
-    // "declaration": true,
+    "target": "es2018",
     "esModuleInterop": true,
-    "strict": false,
-    // "jsx": "react",
-    "target": "es5",
+    "strict": true,
     "module": "commonjs",
     "outDir": "dist",
-    "declaration": true,
-    
+    "declaration": false,
+    "baseUrl": ".",
+    "noImplicitAny": false,
     "lib": [
       "dom",
       "dom.iterable",
@@ -30,6 +24,6 @@
     "noEmit": true,
     "jsx": "react-jsx"
   },
-  "include": ["./scripts", "./test", "./typechain","./src"],
-  "files": ["./hardhat.config.ts","./src/types/declaration.d.ts"]
+  "exclude": ["node_modules"],
+  "include": ["src"]
 }

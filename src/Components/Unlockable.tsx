@@ -7,6 +7,7 @@ import Samsara from "./Samsara";
 import SnapChat from "./Snapchat";
 import ShopifyComponent from "./Shopify";
 import axios from "../configs/axios.config";
+import CardContainer from "./CardContainer";
 const Unlockable = () => {
   // const [signer, setSigner] = useState<ethers.Signer | undefined>(undefined);
   const [connected, setConnected] = useState(false);
@@ -131,22 +132,13 @@ const Unlockable = () => {
       </div>
 
       <div className="mAContainer">
-        <h1>WELCOME TO DAW MEMBERS AREA</h1>
-        {!connected && <button onClick={connect}>CONNECT WALLET</button>}
-        <div className="cardContainer">
-          {connected && (
-            <>
-              {/* {content.filter((c) => c.type == "DAW").length && <ShopifyComponent />} */}
-              {content.length ? (
-                content.map((content) =>
-                  content.type === "DAW" ? <Samsara content={content} /> : <SnapChat content={content} />
-                )
-              ) : (
-                <p style={{ color: "whitesmoke" }}>You don't have unblockables</p>
-              )}
-            </>
-          )}
-        </div>
+        <h1 className={"mAContainer_title"}>WELCOME TO DAW MEMBERS AREA</h1>
+        {!connected && (
+          <button className={"mAContainer_connect"} onClick={connect}>
+            CONNECT WALLET
+          </button>
+        )}
+        <CardContainer connected={connected} content={content} />
       </div>
 
       {/* {connected && (
@@ -179,7 +171,7 @@ const Unlockable = () => {
       <div className="bottom">
         <div className="bottom__header">
           <p>
-            VERIFIED SMART CONTRACT ADDRESS:{" "}
+            VERIFIED SMART CONTRACT ADDRESS:
             <a href="https://etherscan.io/address/0xf1268733c6fb05ef6be9cf23d24436dcd6e0b35e">VIEW ON ETHERSCAN</a>
           </p>
         </div>
