@@ -10,7 +10,7 @@ const StyledCard = styled.div`
   border-radius: 5px;
   /* padding: 20px 0; */
   @media screen and (max-width: 768px) {
-    height: 220px;
+    height: 175px;
     width: 100%;
   }
 `;
@@ -40,6 +40,9 @@ const StyledSide = styled.div`
     margin: 0;
     font-size: clamp(4pt, 5vw, 12pt);
   }
+  @media screen and (max-width: 768px) {
+    gap: initial;
+  }
 `;
 const StyledPurchaseButton = styled(motion.button)`
   width: fit-content;
@@ -53,22 +56,29 @@ const StyledPurchaseButton = styled(motion.button)`
   cursor: pointer;
   color: white;
 `;
-const StyledLogo = styled.img`
+const StyledLogo = styled.img<{ revertLogo?: boolean }>`
   /* width:20px; */
-  height: 40px;
+  max-height: 40px;
+  max-width: 100%;
+  ${(prop) => prop.revertLogo && `filter: invert(100%);`}
 `;
 const StyledText = styled.div`
   display: flex;
   flex-direction: column;
   gap: 10px;
   text-align: center;
+  b {
+    font-style: inherit;
+    font-size: 130%;
+    font-weight: 1000;
+  }
   p {
     margin: 0;
     line-height: 200%;
   }
   white-space: pre-line;
   /* font-size: clamp(5pt, 4vw, 9pt); */
-  font-size: clamp(10px, 0.9vw /* 10pt */, 22px);
+  font-size: clamp(9.5px, 0.9vw /* 10pt */, 22px);
   @media screen and (max-width: 768px) {
     /* font-size: 10px; */
   }
@@ -80,8 +90,9 @@ export interface ICardProps {
   image: string;
   buttonText: string;
   link: string;
+  revertLogo?: boolean;
 }
-const Card = ({ image, text, logo, buttonText, link }: ICardProps) => {
+const Card = ({ image, text, logo, buttonText, link, revertLogo }: ICardProps) => {
   const OpenLink = () => open(link);
   return (
     <StyledCard>
@@ -91,7 +102,7 @@ const Card = ({ image, text, logo, buttonText, link }: ICardProps) => {
       <StyledSide>
         <div>
           {/* <h1>{title}</h1> */}
-          <StyledLogo src={logo} alt="" />
+          <StyledLogo src={logo} alt="" revertLogo={revertLogo} />
         </div>
         <StyledText>{text}</StyledText>
         <StyledPurchaseButton onClick={OpenLink} whileTap={{ scale: 0.95 }} whileHover={{ scale: 1.05 }}>

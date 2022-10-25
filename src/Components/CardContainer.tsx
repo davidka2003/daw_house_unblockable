@@ -3,12 +3,20 @@ import styled from "styled-components";
 import Card, { ICardProps } from "./Card";
 import Samsara from "./Samsara";
 import SnapChat from "./Snapchat";
-import bag_image from "../assets/bag.jpg";
+import bag_image from "../assets/bag.jpeg";
 import chains_image from "../assets/chain.jpg";
 import beer_image from "../assets/beer.jpeg";
+import wagmi_product from "../assets/wagmi_product.png";
 import wagmi_logo from "../assets/wagmi_logo.png";
 import alchemy_logo from "../assets/alchemy_logo.jpg";
 import rcd_logo from "../assets/rcd_logo.jpg";
+import sunday_logo from "../assets/sunday_logo.png";
+import showfields_logo from "../assets/showfields_logo.png";
+import batch_logo from "../assets/batch_logo.png";
+import sunday_product from "../assets/sunday_product.png";
+import showfields_product from "../assets/showfields_product.png";
+import batch_product from "../assets/batch_product.png";
+
 const cards: ICardProps[] = [
   {
     // title: "Rich Class Decor",
@@ -55,12 +63,59 @@ const cards: ICardProps[] = [
       </>
     ),
     logo: wagmi_logo,
-    image: beer_image,
+    image: wagmi_product,
     buttonText: "Purchase",
     link: "https://wagmidelightlab.xyz/",
   },
+  {
+    // title: "Rich Class Decor",
+    text: (
+      <>
+        <p>
+          The most interesting store in the world
+          <br />
+          $25 Coupon Code - <b>DOW25</b>
+        </p>
+      </>
+    ),
+    logo: sunday_logo,
+    image: sunday_product,
+    buttonText: "Purchase",
+    link: "http://showfields.com/",
+  },
+  {
+    // title: "Alchemy Chains",
+    text: (
+      <>
+        <p>
+          A boutique CBD manufacturer and brand
+          <br />
+          25$ Coupon Code - <b>save25date</b>
+        </p>
+      </>
+    ),
+    logo: showfields_logo,
+    image: showfields_product,
+    buttonText: "Purchase",
+    link: "http://hellobatch.com/",
+  },
+  {
+    // title: "WAGMI Beer",
+    text: (
+      <>
+        <p>
+          Radical softness for home, body & soul
+          <br />
+          20% Coupon Code - <b>code</b>
+        </p>
+      </>
+    ),
+    logo: batch_logo,
+    image: batch_product,
+    buttonText: "Purchase",
+    link: "https://sundaycitizen.co",
+  },
 ];
-
 const StyledCardContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -101,16 +156,18 @@ const CardContainer = ({ content, connected }: ICardContainerProps) => {
         <>
           {content.filter((c) => c.type == "DAW").length > 0 && (
             <AniversaryContent>
-              {cards.map((card) => (
+              {cards.slice(0, 3).map((card) => (
                 <Card {...card} />
               ))}
             </AniversaryContent>
           )}
-          {/*content.filter((c) => c.type == "DAW").length &&  <AniversaryContent>
-            {cards.map((card) => (
-              <Card {...card} />
-            ))}
-          </AniversaryContent> */}
+          {content.filter((c) => c.type == "DAW").length && (
+            <AniversaryContent>
+              {cards.slice(3, 7).map((card) => (
+                <Card {...card} revertLogo />
+              ))}
+            </AniversaryContent>
+          )}
           <RegularContent>
             {/* {content.filter((c) => c.type == "DAW").length && <ShopifyComponent />} */}
             {content.length ? (
