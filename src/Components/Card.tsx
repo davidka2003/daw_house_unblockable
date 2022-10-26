@@ -8,10 +8,13 @@ const StyledCard = styled.div`
   width: fit-content;
   border: solid 1px rgba(245, 245, 245, 0.549);
   border-radius: 5px;
+  flex-basis: 0;
+  flex-grow: 1;
   /* padding: 20px 0; */
   @media screen and (max-width: 768px) {
     height: 175px;
     width: 100%;
+    flex-basis: auto;
   }
 `;
 const LeftSide = styled.div`
