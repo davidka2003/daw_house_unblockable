@@ -81,7 +81,7 @@ const cards: ICardProps[] = [
     logo: sunday_logo,
     image: sunday_product,
     buttonText: "Purchase",
-    link: "http://showfields.com/",
+    link: "https://sundaycitizen.co",
   },
   {
     // title: "Alchemy Chains",
@@ -97,7 +97,7 @@ const cards: ICardProps[] = [
     logo: showfields_logo,
     image: showfields_product,
     buttonText: "Purchase",
-    link: "http://hellobatch.com/",
+    link: "http://showfields.com/",
   },
   {
     // title: "WAGMI Beer",
@@ -106,14 +106,14 @@ const cards: ICardProps[] = [
         <p>
           Radical softness for home, body & soul
           <br />
-          20% Coupon Code - <b>code</b>
+          20% Coupon Code - <b>COMING SOON</b>
         </p>
       </>
     ),
     logo: batch_logo,
     image: batch_product,
     buttonText: "Purchase",
-    link: "https://sundaycitizen.co",
+    link: "http://hellobatch.com/",
   },
 ];
 const StyledCardContainer = styled.div`
