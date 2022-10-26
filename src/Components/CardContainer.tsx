@@ -37,12 +37,12 @@ const cards: ICardProps[] = [
     text: (
       <>
         <p>
-          14K gold plated pendant and necklace <br />
+          14K Gold Plated Pendant and Necklace <br />
           DAW NFT Hexagon <s>$120</s> $96.
           <br />
           DAW NFT Cutout <s>$160</s> $128.
           <br />
-          Sent a DM to @alchemychains
+          Send a DM to @alchemychains
         </p>
       </>
     ),
@@ -56,23 +56,23 @@ const cards: ICardProps[] = [
     text: (
       <>
         <p>
-          Crystal custom 6 pack 0.1 ETH
+          Crystal Custom 6 Pack 0.1 ETH
           <br />
-          Limited Edition Crystal custom 3 beers with Diamond Hands can holder 0.2 ETH
+          Crystal custom 6 beers with Limited Edition Diamond Hands Holder 0.2 ETH
         </p>
       </>
     ),
     logo: wagmi_logo,
     image: wagmi_product,
     buttonText: "Purchase",
-    link: "https://wagmidelightlab.xyz/",
+    link: "https://wagmidelightlab.xyz/daw",
   },
   {
     // title: "Rich Class Decor",
     text: (
       <>
         <p>
-          The most interesting store in the world
+          The Most Interesting Store In The World
           <br />
           $25 Coupon Code - <b>DOW25</b>
         </p>
@@ -88,9 +88,9 @@ const cards: ICardProps[] = [
     text: (
       <>
         <p>
-          A boutique CBD manufacturer and brand
+          A Boutique CBD Manufacturer and Brand
           <br />
-          25$ Coupon Code - <b>save25date</b>
+          $25 Coupon Code - <b>save25date</b>
         </p>
       </>
     ),
@@ -104,7 +104,7 @@ const cards: ICardProps[] = [
     text: (
       <>
         <p>
-          Radical softness for home, body & soul
+          Radical Softness For Home, Body & Soul
           <br />
           20% Coupon Code - <b>COMING SOON</b>
         </p>
