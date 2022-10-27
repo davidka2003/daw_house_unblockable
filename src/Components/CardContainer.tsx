@@ -74,7 +74,7 @@ const cards: ICardProps[] = [
         <p>
           Radical Softness For Home, Body & Soul
           <br />
-          20% Coupon Code - <b>Coming Soon</b>
+          20% Coupon Code - <b>DAWSUNDAY20%</b>
         </p>
       </>
     ),
