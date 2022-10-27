@@ -3,15 +3,16 @@ import styled from "styled-components";
 import { motion } from "framer-motion";
 const StyledCard = styled.div`
   /* height: clamp(210px, 15vw, 350px); */
-  /* height: min-content; */
+  /* height: 206px; */
   color: white;
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   width: fit-content;
   border: solid 1px rgba(245, 245, 245, 0.549);
   border-radius: 5px;
   flex-basis: 0;
   flex-grow: 1;
+  flex-shrink: 1;
   /* padding: 20px 0; */
   @media screen and (max-width: 768px) {
     height: 175px;
@@ -20,10 +21,14 @@ const StyledCard = styled.div`
   }
 `;
 const LeftSide = styled.div`
-  width: 50%;
+  max-width: 50%;
+  /* width: auto; */
+  flex-shrink: 0;
+  flex-grow: 1;
+  text-align: left;
   img {
-    aspect-ratio: 1 / 1;
-    width: 100%;
+    aspect-ratio: 0.932;
+    max-width: 100%;
     height: 100%;
     /* object-fit: fill; */
     border-top-left-radius: 5px;
@@ -33,12 +38,14 @@ const LeftSide = styled.div`
   }
 `;
 const StyledSide = styled.div`
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  width: 50%;
-  height: auto;
+  flex-shrink: 1;
+  /* width: 100%; */
+  /* height: auto; */
   /* gap: 15px; */
   padding: 10px;
 
@@ -84,7 +91,7 @@ const StyledText = styled.div`
   }
   white-space: pre-line;
   /* font-size: clamp(5pt, 4vw, 9pt); */
-  font-size: clamp(9.5px, 0.9vw /* 10pt */, 22px);
+  font-size: clamp(9.5px, 0.9vw /* 10pt */, 12px);
   @media screen and (max-width: 768px) {
     /* font-size: 10px; */
   }
@@ -105,16 +112,18 @@ const Card = ({ image, text, logo, buttonText, link, revertLogo }: ICardProps) =
       <LeftSide>
         <img src={image} alt="" />
       </LeftSide>
-      <StyledSide>
-        <div>
-          {/* <h1>{title}</h1> */}
-          <StyledLogo src={logo} alt="" revertLogo={revertLogo} />
-        </div>
-        <StyledText>{text}</StyledText>
-        <StyledPurchaseButton onClick={OpenLink} whileTap={{ scale: 0.95 }} whileHover={{ scale: 1.05 }}>
-          {buttonText}
-        </StyledPurchaseButton>
-      </StyledSide>
+      <div style={{ width: "100%" }}>
+        <StyledSide>
+          <div>
+            {/* <h1>{title}</h1> */}
+            <StyledLogo src={logo} alt="" revertLogo={revertLogo} />
+          </div>
+          <StyledText>{text}</StyledText>
+          <StyledPurchaseButton onClick={OpenLink} whileTap={{ scale: 0.95 }} whileHover={{ scale: 1.05 }}>
+            {buttonText}
+          </StyledPurchaseButton>
+        </StyledSide>
+      </div>
     </StyledCard>
   );
 };
