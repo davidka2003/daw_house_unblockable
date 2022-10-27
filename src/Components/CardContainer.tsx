@@ -126,11 +126,14 @@ const AniversaryContent = styled.div`
   display: flex;
   width: 92.5%;
   gap: 15px;
-  /* flex-wrap: wrap; */
+  flex-basis: 0;
+  flex-grow: 1;
+  /* height: 210px; */
   @media screen and (max-width: 768px) {
     flex-direction: column;
     align-items: center;
-    width: 80%;
+    /* width: 80%; */
+    width: 90%;
     gap: 30px;
     align-items: stretch;
     justify-content: stretch;
@@ -143,6 +146,7 @@ const RegularContent = styled.div`
   align-items: center;
   gap: 30px;
   @media screen and (max-width: 768px) {
+    width: 90%;
   }
 `;
 interface ICardContainerProps {

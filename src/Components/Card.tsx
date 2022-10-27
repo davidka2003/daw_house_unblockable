@@ -2,6 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 const StyledCard = styled.div`
+  /* height: clamp(210px, 15vw, 350px); */
+  /* height: min-content; */
   color: white;
   display: flex;
   justify-content: space-between;
@@ -20,9 +22,10 @@ const StyledCard = styled.div`
 const LeftSide = styled.div`
   width: 50%;
   img {
+    aspect-ratio: 1 / 1;
     width: 100%;
     height: 100%;
-    object-fit: fill;
+    /* object-fit: fill; */
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
     /* max-height: 180px; */
@@ -36,7 +39,7 @@ const StyledSide = styled.div`
   justify-content: space-between;
   width: 50%;
   height: auto;
-  gap: 15px;
+  /* gap: 15px; */
   padding: 10px;
 
   h1 {
