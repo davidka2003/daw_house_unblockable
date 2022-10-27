@@ -72,9 +72,9 @@ const cards: ICardProps[] = [
     text: (
       <>
         <p>
-          The Most Interesting Store In The World
+          Radical Softness For Home, Body & Soul
           <br />
-          $25 Coupon Code - <b>DOW25</b>
+          20% Coupon Code - <b>Coming Soon</b>
         </p>
       </>
     ),
@@ -88,9 +88,9 @@ const cards: ICardProps[] = [
     text: (
       <>
         <p>
-          A Boutique CBD Manufacturer and Brand
+          The Most Interesting Store In The World
           <br />
-          $25 Coupon Code - <b>save25date</b>
+          $25 Coupon Code - <b>DOW25</b>
         </p>
       </>
     ),
@@ -104,9 +104,9 @@ const cards: ICardProps[] = [
     text: (
       <>
         <p>
-          Radical Softness For Home, Body & Soul
+          A Boutique CBD Manufacturer and Brand
           <br />
-          20% Coupon Code - <b>COMING SOON</b>
+          $25 Coupon Code - <b>save25date</b>
         </p>
       </>
     ),
@@ -116,6 +116,7 @@ const cards: ICardProps[] = [
     link: "http://hellobatch.com/",
   },
 ];
+
 const StyledCardContainer = styled.div`
   display: flex;
   flex-direction: column;
