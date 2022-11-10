@@ -48,6 +48,10 @@ const StyledMoxyHotels = styled.div`
       margin: 0 !important;
       color: white;
     }
+    a {
+      text-decoration: underline;
+      color: white;
+    }
     p {
       color: rgb(197, 197, 197);
       font-size: clamp(12px, 1.4vw, 17px);
@@ -108,9 +112,12 @@ const MoxyHotels = ({
           Miami South Beach Coolest Hotel
           <br /> FREE Day Pass Coupon - {content.content}
         </h1>
-        <p>For reservation, email pool@moxysouthbeach.com with the coupon code.</p>
+        <p>
+          For reservation, email <a href={"mailto:pool@moxysouthbeach.com"}>pool@moxysouthbeach.com</a> with the coupon
+          code.
+        </p>
         <StyledPurchaseButton whileTap={{ scale: 0.95 }} whileHover={{ scale: 1.05 }} onClick={reveal}>
-          RESERVATION
+          CHECK MOXY
         </StyledPurchaseButton>
       </div>
     </StyledMoxyHotels>
