@@ -129,6 +129,8 @@ const AniversaryContent = styled.div`
   gap: 15px;
   flex-basis: 0;
   flex-grow: 1;
+  justify-content: center;
+  /* flex: 1 1 0; */
   /* height: 210px; */
   @media screen and (max-width: 768px) {
     flex-direction: column;
@@ -173,16 +175,23 @@ const CardContainer = ({ content, connected }: ICardContainerProps) => {
               ))}
             </AniversaryContent>
           )}
-          <RegularContent>
+          <AniversaryContent>
             {/* {content.filter((c) => c.type == "DAW").length && <ShopifyComponent />} */}
             {content.length ? (
               content.map((content) =>
-                content.type === "DAW" ? <Samsara content={content} /> : <SnapChat content={content} />
+                content.type === "DAW" ? (
+                  <>
+                    {/* <Samsara content={content} /> */}
+                    <Samsara content={content} />
+                  </>
+                ) : (
+                  <SnapChat content={content} />
+                )
               )
             ) : (
               <p style={{ color: "whitesmoke" }}>You don't have unblockables</p>
             )}
-          </RegularContent>
+          </AniversaryContent>
         </>
       )}
     </StyledCardContainer>
