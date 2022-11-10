@@ -16,6 +16,8 @@ import batch_logo from "../assets/batch_logo.png";
 import sunday_product from "../assets/sunday_product.png";
 import showfields_product from "../assets/showfields_product.png";
 import batch_product from "../assets/batch_product.png";
+import SamsaraNew from "./SamsaraNew";
+import MoxyHotels from "./MoxyHotels";
 
 const cards: ICardProps[] = [
   {
@@ -130,8 +132,6 @@ const AniversaryContent = styled.div`
   flex-basis: 0;
   flex-grow: 1;
   justify-content: center;
-  /* flex: 1 1 0; */
-  /* height: 210px; */
   @media screen and (max-width: 768px) {
     flex-direction: column;
     align-items: center;
@@ -182,7 +182,9 @@ const CardContainer = ({ content, connected }: ICardContainerProps) => {
                 content.type === "DAW" ? (
                   <>
                     {/* <Samsara content={content} /> */}
-                    <Samsara content={content} />
+                    <SamsaraNew content={content} />
+                    <MoxyHotels content={{ ...content, content: "DAWMiami" }} />
+                    {/* <Samsara content={content} /> */}
                   </>
                 ) : (
                   <SnapChat content={content} />
